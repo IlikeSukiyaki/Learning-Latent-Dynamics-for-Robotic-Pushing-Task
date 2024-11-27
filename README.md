@@ -1,5 +1,5 @@
 # Learning-Latent-Dynamics-for-Robotic-Pushing-Task
-This is a control-from-pixel (visuomotor policy) project that utilizes a VAE (Variational Autoencoder) to perform robotic pushing task by learning latent space dynamics
+This is a control-from-pixel (visuomotor policy) project that utilizes a VAE (Variational Autoencoder) to perform a robotic pushing task by learning latent space dynamics.
 
 # Planar Pushing Learning From Images
 
@@ -8,8 +8,13 @@ This project involves learning the dynamics of a planar pushing task directly fr
 ## State Space
 - The **state space** is a **32 × 32 grayscale image** captured from an **overhead camera**.  
 - It encodes the block's position and orientation on a planar surface.
-![State Space and Action Space](Img/state_space.png)  
+
+<div align="center">
+    <img src="Img/state_space.png" alt="State Space and Action Space" width="500px">
+</div>
+
 *Figure: The robot action space for the planar pushing task.*
+
 ## Action Space
 The action space is parameterized as \(\mathbf{u} = [p, \phi, \ell]^\top \in \mathbb{R}^3\):
 1. **\(p \in [-1, 1]\):** Pushing location along the block's lower edge.
@@ -20,5 +25,3 @@ The action space is parameterized as \(\mathbf{u} = [p, \phi, \ell]^\top \in \ma
 - The robot's pusher interacts with the block along its lower edge.
 - Actions control the pushing location, direction, and distance.
 - The goal is to learn the relationship between actions (\(\mathbf{u}\)) and the resulting state changes.
-
-
