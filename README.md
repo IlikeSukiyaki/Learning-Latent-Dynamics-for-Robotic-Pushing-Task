@@ -35,12 +35,12 @@ This part of the project involves implementing and training a dynamics model in 
 ## Architecture
 
 The architecture consists of three main components:
-1. **State Encoder:** Encodes the input image (\(x_t\)) into a latent vector (\(z_t\)).
-2. **Latent Dynamics Model:** Predicts the next latent state (\(z_{t+1}\)) based on the current latent state (\(z_t\)) and the action (\(a_t\)).
-3. **State Decoder:** Decodes the predicted latent vector (\(z_{t+1}\)) back into the image space to reconstruct \(x_{t+1}\).
+1. **State Encoder:** Encodes the input image (`x_t`) into a latent vector (`z_t`).
+2. **Latent Dynamics Model:** Predicts the next latent state (`z_t+1`) based on the current latent state (`z_t`) and the action (`a_t`).
+3. **State Decoder:** Decodes the predicted latent vector (`z_t+1`) back into the image space to reconstruct `x_t+1`.
 
 <div align="center">
-    <img src="Img/latent_dynamics_architecture.png" alt="Latent Dynamics Architecture" width="600px">
+    <img src="Img/arc1" alt="Latent Dynamics Architecture" width="800px">
 </div>
 
 *Figure: Latent dynamics architecture for learning state transitions.*
@@ -50,37 +50,36 @@ The architecture consists of three main components:
 ### State Encoder
 The **State Encoder** maps the input image into a latent vector. It is a deterministic model that processes the input through several convolutional layers, followed by max-pooling and fully connected layers.
 
-- **Input:** Grayscale image (\(x_t\)), \(32 \times 32\), with 1 channel.
-- **Output:** Latent vector (\(z_t\)) with dimensionality specified by `latent_dim`.
+- **Input:** Grayscale image (`x_t`), 32×32 pixels, with 1 channel.
+- **Output:** Latent vector (`z_t`) with dimensionality specified by `latent_dim`.
 
 #### Encoder Architecture:
-1. Conv2D (4 filters, kernel size 3×3) + ReLU → \(4 \times 28 \times 28\)
-2. MaxPool2D (2×2) → \(4 \times 14 \times 14\)
-3. Conv2D (4 filters, kernel size 3×3) + ReLU → \(4 \times 10 \times 10\)
-4. MaxPool2D (2×2) → \(4 \times 5 \times 5\)
-5. Flatten → \(4 \cdot 5^2 = 100\)
-6. Linear + ReLU → 100
-7. Linear → Latent vector (\(z_t\)) with size `latent_dim`.
+1. Conv2D (4 filters, kernel size 3×3) + ReLU → Output size: 4 × 28 × 28
+2. MaxPool2D (2×2) → Output size: 4 × 14 × 14
+3. Conv2D (4 filters, kernel size 3×3) + ReLU → Output size: 4 × 10 × 10
+4. MaxPool2D (2×2) → Output size: 4 × 5 × 5
+5. Flatten → Output size: 100 (calculated as `4 × 5 × 5`)
+6. Linear + ReLU → Output size: 100
+7. Linear → Latent vector (`z_t`) with size `latent_dim`.
 
 <div align="center">
-    <img src="Img/arc1.png" alt="State Encoder Architecture" width="600px">
+    <img src="Img/state_encoder_architecture.png" alt="State Encoder Architecture" width="600px">
 </div>
 
 *Figure: State Encoder Architecture.*
 
 ### Latent Dynamics Model
-- Takes the current latent vector (\(z_t\)) and the action vector (\(a_t\)).
-- Outputs the next latent vector (\(z_{t+1}\)).
+- Takes the current latent vector (`z_t`) and the action vector (`a_t`).
+- Outputs the next latent vector (`z_t+1`).
 
 ### State Decoder
-- Decodes the predicted latent vector (\(z_{t+1}\)) back into the image space to reconstruct the next state (\(x_{t+1}\)).
+- Decodes the predicted latent vector (`z_t+1`) back into the image space to reconstruct the next state (`x_t+1`).
 
 ---
 
 ## Objective
-- Train the system to reconstruct \(x_{t+1}\) from \(x_t\) and \(a_t\) by learning the dynamics in the latent space.
-- Minimize the reconstruction loss between \(x_{t+1}\) and the decoded output.
+- Train the system to reconstruct `x_t+1` from `x_t` and `a_t` by learning the dynamics in the latent space.
+- Minimize the reconstruction loss between `x_t+1` and the decoded output.
 
 ---
 
-Ensure the images (`latent_dynamics_architecture.png` and `state_encoder_architecture.png`) are stored in the `Img` directory relative to this README. Adjust the paths if needed.
