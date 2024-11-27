@@ -40,7 +40,7 @@ The architecture consists of three main components:
 3. **State Decoder:** Decodes the predicted latent vector (`z_t+1`) back into the image space to reconstruct `x_t+1`.
 
 <div align="center">
-    <img src="Img/arc1" alt="Latent Dynamics Architecture" width="800px">
+    <img src="Img/overall_arc.png" alt="Latent Dynamics Architecture" width="800px">
 </div>
 
 *Figure: Latent dynamics architecture for learning state transitions.*
@@ -63,7 +63,7 @@ The **State Encoder** maps the input image into a latent vector. It is a determi
 7. Linear → Latent vector (`z_t`) with size `latent_dim`.
 
 <div align="center">
-    <img src="Img/state_encoder_architecture.png" alt="State Encoder Architecture" width="600px">
+    <img src="Img/arc1.png" alt="State Encoder Architecture" width="800px">
 </div>
 
 *Figure: State Encoder Architecture.*
