@@ -8,7 +8,8 @@ This project involves learning the dynamics of a planar pushing task directly fr
 ## State Space
 - The **state space** is a **32 × 32 grayscale image** captured from an **overhead camera**.  
 - It encodes the block's position and orientation on a planar surface.
-
+![State Space and Action Space](Img/state_space.png)  
+*Figure: The robot action space for the planar pushing task.*
 ## Action Space
 The action space is parameterized as \(\mathbf{u} = [p, \phi, \ell]^\top \in \mathbb{R}^3\):
 1. **\(p \in [-1, 1]\):** Pushing location along the block's lower edge.
