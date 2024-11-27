@@ -16,10 +16,15 @@ This project involves learning the dynamics of a planar pushing task directly fr
 *Figure: The robot action space for the planar pushing task.*
 
 ## Action Space
-The action space is parameterized as \(\mathbf{u} = [p, \phi, \ell]^\top \in \mathbb{R}^3\):
-1. **\(p \in [-1, 1]\):** Pushing location along the block's lower edge.
-2. **\(\phi \in [-\frac{\pi}{2}, \frac{\pi}{2}]\):** Pushing angle relative to the block.
-3. **\(\ell \in [0, 1]\):** Pushing length, as a fraction of the max length (\(0.1 \, \text{m}\)).
+The action space is parameterized as:
+
+\[
+\mathbf{u} = [p, \phi, \ell]^\top \in \mathbb{R}^3
+\]
+
+1. \( p \in [-1, 1] \): Pushing location along the block's lower edge.  
+2. \( \phi \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right] \): Pushing angle relative to the block.  
+3. \( \ell \in [0, 1] \): Pushing length, as a fraction of the max length (\(0.1 \, \text{m}\)).
 
 ## Overview
 - The robot's pusher interacts with the block along its lower edge.
