@@ -83,7 +83,7 @@ The **State Encoder** maps the input image into a latent vector. It is a determi
 
 ## Training Result
 <div align="center">
-    <img src="pushing_visualization.gif" alt="Visualization of Pushing Task" width="600px">
+    <img src="Img/pushing_visualization.gif" alt="Visualization of Pushing Task" width="600px">
 </div>
 
 <div align="center">
