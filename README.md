@@ -81,5 +81,14 @@ The **State Encoder** maps the input image into a latent vector. It is a determi
 - Train the system to reconstruct `x_t+1` from `x_t` and `a_t` by learning the dynamics in the latent space.
 - Minimize the reconstruction loss between `x_t+1` and the decoded output.
 
+## Training Result
+<div align="center">
+    <img src="Img/obstacle_avoidance_pushing_visualization.gif" alt="Visualization of Pushing Task" width="900px">
+</div>
+
+<div align="center">
+    <img src="Img/obstacle_avoidance_pushing_visualization.gif" alt="Visualization of Pushing Task" width="900px">
+</div>
+
 ---
 
